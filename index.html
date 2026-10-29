@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CafeLA</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <h1>CafeLA</h1>
+        <h2>El mejor cafe colombiano</h2>
+        <nav>
+            <a href="#nosotros">Nosotros</a>
+            <a href="#metodos">Metodos</a>
+            <a href="#contacto">Contacto</a>
+            <a href="#reservas">Reservas</a>
+        </nav>
+    </header>
+
+    <main>
+           <section id="nosotros">
+        <p>"Un concepto moderno e innovador en Istmina, Chocó, diseñado para invitarte a compartir momentos
+            inolvidables, disfrutar la riqueza del mejor café de Colombia y despertar tu lado más creativo a través del
+            arte en cada mesa."</p>
+       </section>
+          
+       <section id="metodos">
+            <h2>Metodos de prepacion</h2>
+            <h3  class="metodo-titulo">Tinto Campesino de Especialidad</h3>
+            <p>Infusión Tradicional, Grano 100% colombiano tostado artesanalmente con agua purificada y delicadas notas
+                de
+                panela orgánica. <span class="precio">$3.500</span></p>
+            <h3  class="metodo-titulo">Espresso Doble de Origen</h3>
+            <p>Extracción a Presión, Extracción rápida de alta presión que genera una crema densa, cuerpo intenso y
+                notas a
+                chocolate amargo. <span class="precio">$4.500</span></p>
+            <h3  class="metodo-titulo">Cappuccino de la Casa</h3>
+            <p>Espresso con Leche Texturizada, Base de espresso concentrado combinado con microespuma de leche sedosa y
+                un toque
+                de canela molida. <span class="precio">$6.000</span></p>
+            <h3  class="metodo-titulo">Latte Vainilla & Cacao</h3>
+            <p>Bebida suave preparada con leche vaporizada, jarabe natural de vainilla y virutas de cacao fino
+                colombiano. <span class="precio">$6.500</span></p>
+            <h3  class="metodo-titulo">Café Filtrado V60</h3>
+            <p>Filtrado en cono en forma de V con filtro de papel que resalta la acidez cítrica limpia, flores y dulzura
+                natural. <span class="precio">$7.000</span></p>
+            <h3  class="metodo-titulo">Cold Brew de la Casa</h3>
+            <p>Extraccón en Frío (18 hrs), Maceración de café molido en agua fría durante 18 horas. Bebida muy
+                refrescante,
+                naturalmente dulce y de baja acidez. <span class="precio">$7.500</span></p>
+            <h3  class="metodo-titulo">Método Aeropress</h3>
+            <p>Extracción por Presión de Aire,Presión manual que combina la inmersión con la rapidez, extrayendo los
+                mejores
+                sabores, cuerpo equilibrado y notas frutales. <span class="precio">$7.500</span></p>
+            <h3  class="metodo-titulo">Prensa Francesa</h3>
+            <p>Método por Inmersión,Inmersión completa del café en agua caliente usando un émbolo de malla fina para
+                conservar
+                aceites esenciales y cuerpo denso. <span class="precio">$7.000</span></p>
+            <h3  class="metodo-titulo">Extracción Chemex</h3>
+            <p>Filtrado de Vidrio Pyrex,Utiliza un filtro triple de papel especial para retener aceites y sedimentos,
+                produciendo una taza cristalina y aromática. <span class="precio">$8.000</span></p>
+        </section>
+        <section id="reservas">
+            <p>Tazas disponibles hoy: <span id="contador-tazas">50</span></p>
+            <button id="boton-reservar">Reservar una taza</button>
+        </section>
+    </main>
+
+    <footer id="contacto">
+        <h2 class="subtitulo-d">Ubicación Istmina - Chocó</h2>
+        <img  src="CafeLA-Barra.jpg" alt="Barra de CafeLa, elmejor cafe colombiano" width="250">
+        <h3 class="contacto-titulo">Horario de Atención</h3>
+        <p class="parrafos-contacto">Abierto todos los dias, de 8 a. m. a 8 p. m.</p>
+        <h3 class="contacto-titulo">Dirección</h3>
+        <p class="parrafos-contacto">Sede Principal en el barrio Carretera Istmina, Chocó.</p>
+    </footer>
+    <!-- INICIO: Sección de Cata de Café LA -->
+<div class="cafe-container">
+    <div class="cafe-card">
+        <div class="cafe-header">
+            <h2>☕ Café LA - Registro de Cata</h2>
+            <p>Inscríbete a nuestra exclusiva experiencia sensorial.</p>
+        </div>
+
+        <form id="cataForm">
+            <div class="cafe-group">
+                <label for="nombre">Nombre completo</label>
+                <input type="text" id="nombre" placeholder="Ej. Ana María Gómez" required>
+                <span class="cafe-error" id="errorNombre"></span>
+            </div>
+
+            <div class="cafe-group">
+                <label for="email">Correo Electrónico (Solo Gmail)</label>
+                <input type="email" id="email" placeholder="ejemplo@gmail.com" required>
+                <span class="cafe-error" id="errorEmail"></span>
+            </div>
+
+            <div class="cafe-group">
+                <label for="telefono">Teléfono de contacto (Solo números)</label>
+                <input type="text" id="telefono" placeholder="Ej. 3101234567" required>
+                <span class="cafe-error" id="errorTelefono"></span>
+            </div>
+
+            <div class="cafe-group">
+                <label for="mensaje">Mensaje o Comentarios</label>
+                <textarea id="mensaje" rows="3" placeholder="¿Tienes alguna preferencia o duda?"></textarea>
+            </div>
+
+            <button type="submit" class="cafe-btn">Registrarse a la Cata</button>
+        </form>
+
+        <div id="mensajeExito" class="cafe-success" style="display: none;"></div>
+
+        <!-- Consola en pantalla opcional -->
+        <div class="cafe-console-box">
+            <div class="cafe-console-title">🖥️ Consola de Registro (console.log)</div>
+            <div id="consoleOutput" class="cafe-console-output">Esperando envío de datos...</div>
+        </div>
+    </div>
+</div>
+<!-- FIN: Sección de Cata de Café LA -->
+   <script src="script.js"></script>
+
+
+
+
+</body>
+
+</html>

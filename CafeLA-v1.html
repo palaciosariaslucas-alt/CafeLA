@@ -1,0 +1,766 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Café LA - Del barrio pa la fama, Arte & Tradición en Istmina, Chocó</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            night: '#0a192f',
+                            royal: '#112240',
+                            cobalt: '#1d3557',
+                            soft: '#457b9d',
+                            ice: '#f1faee',
+                            bright: '#00b4d8',
+                            accent: '#ffb703'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                        serif: ['"Playfair Display"', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .gradient-hero {
+            background: linear-gradient(135deg, #0a192f 0%, #112240 50%, #1d3557 100%);
+        }
+        .glass-card {
+            background: rgba(17, 34, 64, 0.85);
+            backdrop-filter: blur(12px);
+        }
+        .glow-effect {
+            box-shadow: 0 0 30px rgba(0, 180, 216, 0.3);
+        }
+    </style>
+</head>
+<body class="bg-slate-900 text-slate-100 font-sans antialiased selection:bg-brand-bright selection:text-brand-night">
+
+    <nav class="fixed top-0 left-0 right-0 z-50 bg-brand-night/95 backdrop-blur-md border-b border-brand-royal text-white transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Logotipo Café LA con tonalidades azules -->
+                <a href="#inicio" class="flex items-center gap-3 group">
+                    <div class="w-12 h-12 rounded-2xl bg-gradient-to-tr from-brand-bright via-brand-soft to-brand-royal p-0.5 shadow-lg shadow-brand-bright/20 group-hover:scale-105 transition-transform">
+                        <div class="w-full h-full bg-brand-night rounded-[14px] flex flex-col items-center justify-center border border-brand-bright/40">
+                            <i class="fas fa-mug-hot text-brand-bright text-xs -mb-1"></i>
+                            <span class="font-serif font-black text-sm text-white tracking-tighter">LA</span>
+                        </div>
+                    </div>
+                    <div class="flex flex-col">
+                        <span class="font-serif font-extrabold text-xl tracking-wider text-white leading-tight">CAFÉ LA</span>
+                        <span class="text-[10px] uppercase tracking-widest text-brand-bright font-semibold">Istmina - Chocó</span>
+                    </div>
+                </a>
+
+                <!-- Menú Desktop -->
+                <div class="hidden md:flex items-center space-x-6 text-sm font-medium">
+                    <a href="#inicio" class="hover:text-brand-bright transition-colors py-1">Inicio</a>
+                    <a href="#especiales" class="hover:text-brand-bright transition-colors py-1">Especiales Finde</a>
+                    <a href="#menu" class="hover:text-brand-bright transition-colors py-1">Menú & Precios</a>
+                    <a href="#arcilla" class="hover:text-brand-bright transition-colors py-1">Arte en Arcilla</a>
+                    <a href="#reserva" class="hover:text-brand-bright transition-colors py-1">Reservar Mesa</a>
+                    <a href="#ubicacion" class="hover:text-brand-bright transition-colors py-1">Ubicación</a>
+                </div>
+
+                <!-- Botón de WhatsApp rápido -->
+                <div class="hidden md:flex items-center gap-3">
+                    <a href="https://wa.me/573000000000?text=Hola%20Caf%C3%A9%20LA%20Istmina,%20quisiera%20hacer%20una%20consulta" target="_blank" class="flex items-center gap-2 bg-emerald-600 hover:bg-emerald-500 text-white px-5 py-2.5 rounded-full font-bold text-sm transition-all shadow-lg hover:shadow-emerald-600/30">
+                        <i class="fab fa-whatsapp text-lg"></i>
+                        <span>WhatsApp</span>
+                    </a>
+                </div>
+
+                <!-- Menú Móvil -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-slate-300 hover:text-white focus:outline-none p-2">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div id="mobile-menu" class="hidden md:hidden bg-brand-night border-b border-brand-royal px-4 pt-2 pb-6 space-y-3">
+            <a href="#inicio" class="block py-2 text-slate-200 hover:text-brand-bright">Inicio</a>
+            <a href="#especiales" class="block py-2 text-slate-200 hover:text-brand-bright">Especiales Fin de Semana</a>
+            <a href="#menu" class="block py-2 text-slate-200 hover:text-brand-bright">Menú Digital</a>
+            <a href="#arcilla" class="block py-2 text-slate-200 hover:text-brand-bright">Experiencia Arcilla</a>
+            <a href="#reserva" class="block py-2 text-slate-200 hover:text-brand-bright">Reservar Mesa</a>
+            <a href="#ubicacion" class="block py-2 text-slate-200 hover:text-brand-bright">Ubicación Istmina</a>
+            <a href="https://wa.me/573000000000?text=Hola%20Caf%C3%A9%20LA" target="_blank" class="inline-flex items-center gap-2 bg-emerald-600 text-white px-4 py-2.5 rounded-xl text-sm font-bold mt-2 w-full justify-center">
+                <i class="fab fa-whatsapp text-lg"></i> Escribir a WhatsApp
+            </a>
+        </div>
+    </nav>
+
+    <section id="inicio" class="relative pt-32 pb-20 md:pt-40 md:pb-32 gradient-hero text-white overflow-hidden">
+        <div class="absolute top-1/4 -right-20 w-96 h-96 bg-brand-bright/20 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="absolute bottom-10 left-10 w-80 h-80 bg-brand-soft/20 rounded-full blur-3xl pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                    <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-brand-royal/90 border border-brand-bright/40 text-brand-bright text-xs sm:text-sm font-semibold">
+                        <i class="fas fa-location-dot"></i>
+                        <span>Sede Istmina - Chocó • Atención 8:00 AM a 6:00 PM</span>
+                    </div>
+                    
+                    <h1 class="font-serif text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight">
+                        El mejor café colombiano con <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-bright via-cyan-200 to-brand-accent">Arte en tu Mesa</span>
+                    </h1>
+                    
+                    <p class="text-base sm:text-lg text-slate-300 font-light max-w-2xl mx-auto lg:mx-0 leading-relaxed">
+                        Bienvenido a <strong class="text-white font-semibold">Café LA</strong> en Istmina. Disfruta de perfiles de café colombiano de origen, buñuelos calientitos, pandebonos, pan de yucas y croissants recién horneados. ¡En cada mesa encontrarás figuras de arcilla para pintar mientras compartes!
+                    </p>
+
+                    <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-4">
+                        <a href="#menu" class="w-full sm:w-auto px-8 py-3.5 bg-brand-bright hover:bg-cyan-400 text-brand-night font-extrabold rounded-xl shadow-lg shadow-brand-bright/30 transition-all hover:-translate-y-0.5 text-center">
+                            Explorar Menú & Precios
+                        </a>
+                        <a href="#reserva" class="w-full sm:w-auto px-8 py-3.5 bg-brand-royal hover:bg-brand-cobalt text-white font-semibold rounded-xl border border-brand-bright/30 transition-all text-center">
+                            Reservar Mesa
+                        </a>
+                    </div>
+
+                    <div class="grid grid-cols-3 gap-4 pt-8 border-t border-brand-royal/80 max-w-lg mx-auto lg:mx-0">
+                        <div>
+                            <span class="block font-extrabold text-2xl text-brand-bright">100%</span>
+                            <span class="text-xs text-slate-400">Café Colombiano</span>
+                        </div>
+                        <div>
+                            <span class="block font-extrabold text-2xl text-brand-bright">8am - 6pm</span>
+                            <span class="text-xs text-slate-400">Horario Continuo</span>
+                        </div>
+                        <div>
+                            <span class="block font-extrabold text-2xl text-brand-accent">Arcilla</span>
+                            <span class="text-xs text-slate-400">En cada mesa</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Logotipo e Identidad Visual Café LA -->
+                <div class="lg:col-span-5 flex justify-center">
+                    <div class="relative w-full max-w-md">
+                        <div class="glass-card rounded-3xl p-8 border border-brand-bright/30 shadow-2xl relative text-white glow-effect text-center">
+                            <!-- Isotipo / Isologo en tonos azules -->
+                            <div class="w-40 h-40 mx-auto rounded-3xl bg-gradient-to-br from-brand-night via-brand-royal to-brand-cobalt flex flex-col items-center justify-center shadow-2xl mb-6 relative overflow-hidden border-2 border-brand-bright/60">
+                                <div class="w-20 h-20 rounded-2xl bg-brand-night border-2 border-brand-bright flex flex-col items-center justify-center mb-1 shadow-inner">
+                                    <i class="fas fa-coffee text-brand-bright text-xl mb-0.5"></i>
+                                    <span class="font-serif font-black text-2xl text-white tracking-tighter">LA</span>
+                                </div>
+                                <span class="font-serif font-extrabold text-sm text-slate-100 tracking-widest uppercase">CAFÉ LA</span>
+                                <span class="text-[9px] uppercase tracking-widest text-brand-bright font-bold">Especialidad & Arte</span>
+                            </div>
+                            
+                            <div class="space-y-3">
+                                <h3 class="font-serif font-bold text-2xl text-white">Café LA</h3>
+                                <p class="text-xs text-slate-300 leading-relaxed">
+                                    "Un concepto moderno e innovador en Istmina, Chocó para disfrutar el mejor café de Colombia y despertar tu creatividad."
+                                </p>
+                                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-night text-brand-bright text-xs font-semibold border border-brand-bright/30">
+                                    <i class="fas fa-map-pin"></i>
+                                    <span>Istmina - Chocó, Colombia</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="especiales" class="py-16 bg-brand-royal/60 border-y border-brand-royal">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-gradient-to-r from-brand-night via-brand-royal to-brand-cobalt rounded-3xl p-8 md:p-12 border border-brand-bright/30 shadow-2xl relative overflow-hidden">
+                <div class="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                    <div class="lg:col-span-5 space-y-4">
+                        <span class="bg-brand-accent text-brand-night font-extrabold text-xs uppercase tracking-widest px-3 py-1 rounded-full inline-block">
+                            Edición Exclusiva Sábados & Domingos
+                        </span>
+                        <h2 class="font-serif text-3xl sm:text-4xl font-bold text-white">Sabores Especiales de Fin de Semana</h2>
+                        <p class="text-slate-300 text-sm sm:text-base leading-relaxed">
+                            Los fines de semana en Istmina preparamos perfiles especiales e infusiones con notas de frutas chocoanas, especias colombianas y recetas únicas creadas por nuestros baristas.
+                        </p>
+                    </div>
+
+                    <div class="lg:col-span-7 grid grid-cols-1 sm:grid-cols-3 gap-4">
+                        <div class="bg-brand-night/80 rounded-2xl p-5 border border-brand-bright/20 hover:border-brand-bright transition-all">
+                            <div class="w-10 h-10 rounded-xl bg-brand-bright/20 flex items-center justify-center text-brand-bright mb-3">
+                                <i class="fas fa-sun"></i>
+                            </div>
+                            <h4 class="font-bold text-base text-white mb-1">Café Cítrico del Pacífico</h4>
+                            <p class="text-xs text-slate-400">Espresso de origen con infusión fría de maracuyá y panela orgánica.</p>
+                            <span class="inline-block mt-3 font-bold text-brand-bright text-sm">$ 7.500 COP</span>
+                        </div>
+
+                        <div class="bg-brand-night/80 rounded-2xl p-5 border border-brand-bright/20 hover:border-brand-bright transition-all">
+                            <div class="w-10 h-10 rounded-xl bg-brand-accent/20 flex items-center justify-center text-brand-accent mb-3">
+                                <i class="fas fa-fire-flame-curved"></i>
+                            </div>
+                            <h4 class="font-bold text-base text-white mb-1">Latte Especiado Canela</h4>
+                            <p class="text-xs text-slate-400">Espresso doble texturizado con canela en rama y miel natural del Chocó.</p>
+                            <span class="inline-block mt-3 font-bold text-brand-accent text-sm">$ 8.000 COP</span>
+                        </div>
+
+                        <div class="bg-brand-night/80 rounded-2xl p-5 border border-brand-bright/20 hover:border-brand-bright transition-all">
+                            <div class="w-10 h-10 rounded-xl bg-brand-bright/20 flex items-center justify-center text-brand-bright mb-3">
+                                <i class="fas fa-glass-water font-bold"></i>
+                            </div>
+                            <h4 class="font-bold text-base text-white mb-1">Cold Brew Istmina</h4>
+                            <p class="text-xs text-slate-400">Extracción fría de 20 horas con notas frutales y cacao silvestre.</p>
+                            <span class="inline-block mt-3 font-bold text-brand-bright text-sm">$ 8.500 COP</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="menu" class="py-20 bg-brand-night">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-12">
+                <span class="text-brand-bright font-bold text-sm tracking-wider uppercase">Nuestra Carta Digital</span>
+                <h2 class="font-serif text-3xl sm:text-4xl font-bold text-white mt-1">Menú & Precios Colombianos</h2>
+                <p class="text-slate-400 mt-2 text-sm sm:text-base">Precios en Pesos Colombianos ($ COP). Haz clic en los productos para ir armando tu pedido.</p>
+            </div>
+
+            <div class="flex justify-center mb-10">
+                <div class="bg-brand-royal p-1.5 rounded-2xl flex gap-2 border border-brand-cobalt/40 flex-wrap justify-center">
+                    <button id="btn-cat-todos" onclick="filtrarMenu('todos')" class="px-5 py-2.5 rounded-xl font-semibold text-sm transition-all bg-brand-bright text-brand-night font-bold shadow-sm">
+                        Todos
+                    </button>
+                    <button id="btn-cat-cafes" onclick="filtrarMenu('cafes')" class="px-5 py-2.5 rounded-xl font-semibold text-sm text-slate-300 hover:text-white transition-all">
+                        <i class="fas fa-mug-hot me-1 text-brand-bright"></i> Cafés Colombianos
+                    </button>
+                    <button id="btn-cat-panaderia" onclick="filtrarMenu('panaderia')" class="px-5 py-2.5 rounded-xl font-semibold text-sm text-slate-300 hover:text-white transition-all">
+                        <i class="fas fa-bread-slice me-1 text-brand-accent"></i> Acompañantes
+                    </button>
+                </div>
+            </div>
+
+            <!-- Grilla dinámica del menú -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="contenedor-menu">
+            </div>
+
+            <!-- Simulador de Pedido -->
+            <div class="mt-12 bg-brand-royal rounded-3xl p-6 sm:p-8 border border-brand-bright/30 shadow-2xl max-w-3xl mx-auto">
+                <div class="flex flex-col sm:flex-row items-center justify-between gap-4 border-b border-brand-cobalt/50 pb-4">
+                    <div class="flex items-center gap-3">
+                        <div class="w-12 h-12 rounded-2xl bg-brand-night border border-brand-bright/40 flex items-center justify-center text-brand-bright text-xl font-bold">
+                            <i class="fas fa-cart-shopping"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-white text-lg">Tu Pedido Estimado</h4>
+                            <p class="text-xs text-slate-400">Selecciona productos para enviarlos directo a la barra</p>
+                        </div>
+                    </div>
+                    <span id="total-pedido" class="font-serif font-extrabold text-2xl text-brand-bright">$ 0 COP</span>
+                </div>
+
+                <div id="lista-pedido" class="py-4 text-xs text-slate-300 min-h-[50px] flex items-center justify-center">
+                    Haz clic en los productos del menú para agregarlos a tu lista.
+                </div>
+
+                <div class="flex flex-col sm:flex-row justify-end gap-3 pt-2">
+                    <button onclick="limpiarPedido()" class="px-4 py-2.5 text-xs font-semibold text-slate-400 hover:text-red-400 transition-colors">
+                        Vaciar Selección
+                    </button>
+                    <button onclick="enviarPedidoWhatsApp()" class="px-6 py-3 bg-emerald-600 hover:bg-emerald-500 text-white rounded-xl text-xs font-bold transition-all flex items-center justify-center gap-2 shadow-lg">
+                        <i class="fab fa-whatsapp text-base"></i> Enviar Pedido a WhatsApp
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="arcilla" class="py-20 bg-gradient-to-b from-brand-royal/40 to-brand-night border-y border-brand-royal">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <div class="lg:col-span-6 space-y-6">
+                    <span class="text-brand-bright font-bold text-sm tracking-wider uppercase">Experiencia Única</span>
+                    <h2 class="font-serif text-3xl sm:text-4xl font-bold text-white leading-tight">
+                        Figuras de Arcilla en Cada Mesa
+                    </h2>
+                    <p class="text-slate-300 leading-relaxed text-sm sm:text-base">
+                        En <strong class="text-white">Café LA Istmina</strong> combinamos el aroma de un buen café colombiano con la expresión artística. En cada mesa encontrarás <span class="text-brand-bright font-semibold">figuras de arcilla hechas a mano</span> junto con acuarelas y pinceles para que pintes a tu gusto mientras compartes momentos inolvidables.
+                    </p>
+
+                    <div class="space-y-4 pt-2">
+                        <div class="flex items-start gap-4 p-4 rounded-2xl bg-brand-royal/80 border border-brand-cobalt/40">
+                            <div class="w-10 h-10 rounded-xl bg-brand-bright text-brand-night font-bold flex items-center justify-center shrink-0">1</div>
+                            <div>
+                                <h4 class="font-bold text-white text-sm">Escoge tu figura</h4>
+                                <p class="text-xs text-slate-400 mt-0.5">Tazas de café, granos, casitas artesanales y figuras tradicionales en arcilla.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4 p-4 rounded-2xl bg-brand-royal/80 border border-brand-cobalt/40">
+                            <div class="w-10 h-10 rounded-xl bg-brand-cobalt text-white font-bold flex items-center justify-center shrink-0">2</div>
+                            <div>
+                                <h4 class="font-bold text-white text-sm">Colorea con tus pinceles</h4>
+                                <p class="text-xs text-slate-400 mt-0.5">Disponemos de tonos y acuarelas para que pintes tranquilamente a tu propio ritmo.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4 p-4 rounded-2xl bg-brand-royal/80 border border-brand-cobalt/40">
+                            <div class="w-10 h-10 rounded-xl bg-brand-accent text-brand-night font-bold flex items-center justify-center shrink-0">3</div>
+                            <div>
+                                <h4 class="font-bold text-white text-sm">Llévatela de recuerdo</h4>
+                                <p class="text-xs text-slate-400 mt-0.5">Al terminar, te llevas tu creación a casa como un hermoso recuerdo de Café LA.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Taller interactivo de arcilla -->
+                <div class="lg:col-span-6">
+                    <div class="bg-brand-royal rounded-3xl p-6 shadow-2xl border border-brand-bright/30">
+                        <div class="flex justify-between items-center mb-4 pb-3 border-b border-brand-cobalt/50">
+                            <div>
+                                <h3 class="font-bold text-white text-sm">Prueba de Color de Arcilla</h3>
+                                <p class="text-xs text-slate-400">Selecciona un color para simular la pintura</p>
+                            </div>
+                            <span class="text-[10px] font-bold bg-brand-bright text-brand-night px-2.5 py-1 rounded-full uppercase">Demo interactiva</span>
+                        </div>
+
+                        <div class="bg-brand-night rounded-2xl p-8 flex items-center justify-center min-h-[260px] relative border border-brand-royal">
+                            <svg id="arcilla-svg" class="w-48 h-48 transition-all duration-300 drop-shadow-2xl" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path id="figura-base" d="M40 60 C40 60, 45 150, 100 150 C155 150, 160 60, 160 60 Z" fill="#D2B48C" stroke="#00b4d8" stroke-width="3"/>
+                                <path id="figura-asa" d="M160 80 C185 80, 185 120, 155 130" stroke="#00b4d8" stroke-width="6" stroke-linecap="round" fill="none"/>
+                                <ellipse cx="100" cy="60" rx="60" ry="15" fill="#2b1810" />
+                                <ellipse cx="100" cy="60" rx="50" ry="10" fill="#42281d" />
+                                <circle id="figura-det-1" cx="80" cy="100" r="14" fill="#E6C280"/>
+                                <circle id="figura-det-2" cx="120" cy="100" r="14" fill="#E6C280"/>
+                            </svg>
+                            <span class="absolute bottom-3 right-4 text-[10px] text-brand-soft font-mono">Figura en Arcilla Café LA</span>
+                        </div>
+
+                        <div class="mt-6 space-y-2">
+                            <label class="text-xs font-bold text-slate-200 block">Tonalidades de pintura disponibles:</label>
+                            <div class="flex flex-wrap gap-3 items-center">
+                                <button onclick="cambiarColorArcilla('#00b4d8', '#90e0ef')" class="w-9 h-9 rounded-full bg-[#00b4d8] border-2 border-white hover:scale-110 transition-transform shadow-md" title="Azul Celeste"></button>
+                                <button onclick="cambiarColorArcilla('#1d3557', '#457b9d')" class="w-9 h-9 rounded-full bg-[#1d3557] border-2 border-white hover:scale-110 transition-transform shadow-md" title="Azul Cobalto"></button>
+                                <button onclick="cambiarColorArcilla('#ffb703', '#ffe6a7')" class="w-9 h-9 rounded-full bg-[#ffb703] border-2 border-white hover:scale-110 transition-transform shadow-md" title="Amarillo Sol"></button>
+                                <button onclick="cambiarColorArcilla('#e63946', '#f1faee')" class="w-9 h-9 rounded-full bg-[#e63946] border-2 border-white hover:scale-110 transition-transform shadow-md" title="Rojo"></button>
+                                <button onclick="cambiarColorArcilla('#2a9d8f', '#e9c46a')" class="w-9 h-9 rounded-full bg-[#2a9d8f] border-2 border-white hover:scale-110 transition-transform shadow-md" title="Verde Esmeralda"></button>
+                                <button onclick="resetColorArcilla()" class="ml-auto px-3 py-1.5 bg-brand-night hover:bg-brand-cobalt text-slate-300 text-xs font-bold rounded-lg transition-colors border border-brand-bright/30">
+                                    Arcilla Natural
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="reserva" class="py-20 bg-brand-night relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="max-w-3xl mx-auto bg-brand-royal rounded-3xl p-8 sm:p-12 border border-brand-bright/30 shadow-2xl">
+                <div class="text-center mb-8">
+                    <span class="text-brand-bright font-bold text-sm tracking-wider uppercase">Asegura tu Lugar</span>
+                    <h2 class="font-serif text-3xl sm:text-4xl font-bold text-white mt-1">Reservación de Mesa</h2>
+                    <p class="text-slate-400 text-sm mt-2">
+                        Reserva tu mesa con anticipación para disfrutar del café y la arcilla en Istmina.
+                    </p>
+                </div>
+
+                <form id="form-reserva" onsubmit="procesarReserva(event)" class="space-y-6">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-xs font-semibold text-slate-300 uppercase mb-2">Nombre Completo *</label>
+                            <input type="text" required id="res-nombre" placeholder="Ej. Yuranis Mosquera" class="w-full bg-brand-night border border-brand-cobalt rounded-xl px-4 py-3 text-white placeholder-slate-500 focus:outline-none focus:border-brand-bright transition-colors text-sm">
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-semibold text-slate-300 uppercase mb-2">Teléfono / WhatsApp *</label>
+                            <input type="tel" required id="res-telefono" placeholder="Ej. 310 123 4567" class="w-full bg-brand-night border border-brand-cobalt rounded-xl px-4 py-3 text-white placeholder-slate-500 focus:outline-none focus:border-brand-bright transition-colors text-sm">
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-semibold text-slate-300 uppercase mb-2">Fecha de Reserva *</label>
+                            <input type="date" required id="res-fecha" class="w-full bg-brand-night border border-brand-cobalt rounded-xl px-4 py-3 text-white focus:outline-none focus:border-brand-bright transition-colors text-sm">
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-semibold text-slate-300 uppercase mb-2">Hora (8:00 AM - 5:30 PM) *</label>
+                            <select id="res-hora" required class="w-full bg-brand-night border border-brand-cobalt rounded-xl px-4 py-3 text-white focus:outline-none focus:border-brand-bright transition-colors text-sm">
+                                <option value="">Selecciona hora</option>
+                                <option value="08:00 AM">08:00 AM</option>
+                                <option value="10:00 AM">10:00 AM</option>
+                                <option value="12:00 PM">12:00 PM</option>
+                                <option value="02:00 PM">02:00 PM</option>
+                                <option value="04:00 PM">04:00 PM</option>
+                                <option value="05:00 PM">05:00 PM</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-semibold text-slate-300 uppercase mb-2">Número de Personas *</label>
+                            <select id="res-personas" required class="w-full bg-brand-night border border-brand-cobalt rounded-xl px-4 py-3 text-white focus:outline-none focus:border-brand-bright transition-colors text-sm">
+                                <option value="1 Persona">1 Persona</option>
+                                <option value="2 Personas">2 Personas</option>
+                                <option value="3-4 Personas">3-4 Personas</option>
+                                <option value="5+ Personas">5+ Personas (Grupo)</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-semibold text-slate-300 uppercase mb-2">¿Desean kit de Arcilla?</label>
+                            <select id="res-arcilla" class="w-full bg-brand-night border border-brand-cobalt rounded-xl px-4 py-3 text-white focus:outline-none focus:border-brand-bright transition-colors text-sm">
+                                <option value="Sí, para todos los asistentes">Sí, para todos los asistentes</option>
+                                <option value="Solo queremos consumir café">Solo queremos consumir café</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div>
+                        <label class="block text-xs font-semibold text-slate-300 uppercase mb-2">Notas o peticiones especiales</label>
+                        <textarea id="res-notas" rows="2" placeholder="Celebraciones, ubicación preferida, etc." class="w-full bg-brand-night border border-brand-cobalt rounded-xl px-4 py-3 text-white placeholder-slate-500 focus:outline-none focus:border-brand-bright transition-colors text-sm"></textarea>
+                    </div>
+
+                    <button type="submit" class="w-full py-4 bg-brand-bright hover:bg-cyan-400 text-brand-night font-extrabold rounded-xl shadow-lg shadow-brand-bright/30 transition-all text-sm uppercase tracking-wider">
+                        Confirmar Mi Reserva
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal de Confirmación de Reserva -->
+    <div id="modal-reserva" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm hidden">
+        <div class="bg-brand-royal text-white rounded-3xl p-6 sm:p-8 max-w-md w-full shadow-2xl border border-brand-bright/40 text-center">
+            <div class="w-16 h-16 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center mx-auto text-3xl mb-4 border border-emerald-500/40">
+                <i class="fas fa-circle-check"></i>
+            </div>
+            <h3 class="font-serif font-bold text-2xl text-white">¡Reserva Confirmada!</h3>
+            <p class="text-sm text-slate-300 mt-2" id="modal-mensaje">
+                Tu mesa ha sido apartada con éxito.
+            </p>
+            <button onclick="cerrarModalReserva()" class="mt-6 w-full py-3 bg-brand-bright text-brand-night font-bold rounded-xl text-sm hover:bg-cyan-400 transition-colors">
+                Entendido
+            </button>
+        </div>
+    </div>
+
+    <section id="ubicacion" class="py-20 bg-brand-royal/40 border-t border-brand-royal">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                <div class="lg:col-span-5 space-y-6">
+                    <span class="text-brand-bright font-bold text-sm tracking-wider uppercase">Información & Visita</span>
+                    <h2 class="font-serif text-3xl sm:text-4xl font-bold text-white">
+                        Ubicación Istmina - Chocó
+                    </h2>
+                    
+                    <div class="space-y-4">
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 rounded-xl bg-brand-night border border-brand-bright/30 flex items-center justify-center text-brand-bright shrink-0">
+                                <i class="fas fa-location-dot"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-white">Dirección</h4>
+                                <p class="text-sm text-slate-300">Sede Principal en Istmina, Chocó, Colombia.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 rounded-xl bg-brand-night border border-brand-bright/30 flex items-center justify-center text-brand-bright shrink-0">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-white">Horario de Atención</h4>
+                                <p class="text-sm text-slate-300">Lunes a Domingo: 8:00 a.m. a 6:00 p.m.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 rounded-xl bg-brand-night border border-brand-bright/30 flex items-center justify-center text-brand-bright shrink-0">
+                                <i class="fab fa-whatsapp"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-white">WhatsApp Directo</h4>
+                                <p class="text-sm text-slate-300">+57 300 000 0000</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <a href="https://wa.me/573000000000?text=Hola%20Caf%C3%A9%20LA,%20quisiera%20saber%20la%20ubicaci%C3%B3n%20exacta%20en%20Istmina" target="_blank" class="inline-flex items-center gap-2 px-6 py-3 bg-emerald-600 hover:bg-emerald-500 text-white font-bold rounded-xl text-sm transition-all shadow-lg">
+                        <i class="fab fa-whatsapp text-lg"></i>
+                        <span>Contactar por WhatsApp</span>
+                    </a>
+                </div>
+
+                <div class="lg:col-span-7">
+                    <div class="bg-brand-night rounded-3xl p-4 border border-brand-bright/30 shadow-2xl relative overflow-hidden">
+                        <div class="w-full h-80 rounded-2xl bg-gradient-to-br from-brand-royal via-brand-cobalt to-brand-night flex flex-col items-center justify-center text-center p-6 relative border border-brand-bright/20">
+                            <div class="w-16 h-16 rounded-2xl bg-brand-bright text-brand-night flex items-center justify-center text-3xl shadow-xl animate-bounce mb-3">
+                                <i class="fas fa-mug-hot"></i>
+                            </div>
+                            <h4 class="font-serif font-bold text-2xl text-white">Café LA</h4>
+                            <p class="text-xs text-slate-300 max-w-sm mt-1">
+                                Tu punto de encuentro en Istmina, Chocó para tomar café de especialidad y pintar en arcilla.
+                            </p>
+                            <span class="mt-4 px-4 py-1.5 bg-brand-night/80 rounded-full text-xs font-bold text-brand-bright border border-brand-bright/40 shadow-sm">
+                                <i class="fas fa-map-pin me-1"></i> Istmina • Chocó
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-brand-night text-slate-300 py-12 border-t border-brand-royal">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row items-center justify-between gap-8 pb-8 border-b border-brand-royal">
+                <!-- Logotipo Footer -->
+                <div class="flex items-center gap-3 text-center md:text-left">
+                    <div class="w-12 h-12 rounded-xl bg-brand-bright flex flex-col items-center justify-center font-serif font-extrabold text-brand-night text-xl shadow-lg">
+                        LA
+                    </div>
+                    <div>
+                        <span class="font-serif font-bold text-xl text-white block">CAFÉ LA</span>
+                        <span class="text-xs text-brand-bright font-medium">Istmina - Chocó • Colombia</span>
+                    </div>
+                </div>
+
+                <!-- REDES SOCIALES AL FINAL (TikTok & Instagram) -->
+                <div class="flex flex-col items-center md:items-end gap-3">
+                    <span class="text-xs text-slate-400 font-bold uppercase tracking-wider">Síguenos en Redes Sociales:</span>
+                    <div class="flex items-center gap-4">
+                        <!-- TikTok -->
+                        <a href="https://tiktok.com/@caafelainstmina" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 px-4 py-2.5 rounded-xl bg-brand-royal hover:bg-black text-white border border-brand-bright/30 transition-all hover:scale-105 shadow-md" title="TikTok Café LA">
+                            <i class="fab fa-tiktok text-lg text-brand-bright"></i>
+                            <span class="text-xs font-bold">@caafelainstmina</span>
+                        </a>
+
+                        <!-- Instagram -->
+                        <a href="https://instagram.com/cafela.istmina" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 px-4 py-2.5 rounded-xl bg-brand-royal hover:bg-gradient-to-tr hover:from-amber-500 hover:via-rose-500 hover:to-purple-600 text-white border border-brand-bright/30 transition-all hover:scale-105 shadow-md" title="Instagram Café LA">
+                            <i class="fab fa-instagram text-lg text-rose-400"></i>
+                            <span class="text-xs font-bold">@cafela.istmina</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500 gap-4">
+                <p>&copy; <span id="year"></span> Café LA. Todos los derechos reservados. Istmina, Chocó.</p>
+                <div class="flex gap-6">
+                    <a href="#inicio" class="hover:text-brand-bright">Inicio</a>
+                    <a href="#menu" class="hover:text-brand-bright">Menú</a>
+                    <a href="#arcilla" class="hover:text-brand-bright">Arcilla</a>
+                    <a href="#reserva" class="hover:text-brand-bright">Reservas</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        const mobileBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Carta de productos completa con precios colombianos ($ COP)
+        const menuProductos = [
+            // Cafés
+            { id: 1, categoria: 'cafes', nombre: 'Tinto Campesino de Especialidad', desc: 'Grano 100% colombiano con notas de panela suave.', precio: 3500, icono: 'fa-coffee' },
+            { id: 2, categoria: 'cafes', nombre: 'Espresso Doble de Origen', desc: 'Extracción concentrada de café de origen con cuerpo cremoso.', precio: 4500, icono: 'fa-mug-hot' },
+            { id: 3, categoria: 'cafes', nombre: 'Cappuccino de la Casa', desc: 'Espresso con leche texturizada y toque delicado de canela.', precio: 6000, icono: 'fa-mug-saucer' },
+            { id: 4, categoria: 'cafes', nombre: 'Latte Vainilla & Cacao', desc: 'Mezcla cremosa con cacao colombiano y notas dulces.', precio: 6500, icono: 'fa-glass-water' },
+            { id: 5, categoria: 'cafes', nombre: 'Café Filtrado V60', desc: 'Metodo artesanal de goteo que resalta acidez limpia y dulzura.', precio: 7000, icono: 'fa-filter' },
+            { id: 6, categoria: 'cafes', nombre: 'Cold Brew de la Casa', desc: 'Café de extracción en frío durante 18 horas, refrescante y suave.', precio: 7500, icono: 'fa-cubes-stacked' },
+
+            // Acompañantes / Panadería Tradicional
+            { id: 7, categoria: 'panaderia', nombre: 'Buñuelo Crujiente', desc: 'Tradicional buñuelo colombiano recién horneado con queso salado.', precio: 2500, icono: 'fa-circle' },
+            { id: 8, categoria: 'panaderia', nombre: 'Pandebono de la Casa', desc: 'Suave masa de almidón de yuca y queso costeño horneado al momento.', precio: 3000, icono: 'fa-cookie' },
+            { id: 9, categoria: 'panaderia', nombre: 'Pan de Yuca Artesanal', desc: 'Textura crocante por fuera y suave por dentro, preparado diariamente.', precio: 3000, icono: 'fa-bread-slice' },
+            { id: 10, categoria: 'panaderia', nombre: 'Croissant Butter Hojaldrado', desc: 'Hojaldre de mantequilla doradito, ideal para acompañar tu café.', precio: 4500, icono: 'fa-wheat-awn' },
+            { id: 11, categoria: 'panaderia', nombre: 'Croissant de Queso & Jamón', desc: 'Relleno de queso derretido y jamón de primera calidad.', precio: 5500, icono: 'fa-utensils' }
+        ];
+
+        let pedidoActual = [];
+
+        function renderizarMenu(productos) {
+            const contenedor = document.getElementById('contenedor-menu');
+            contenedor.innerHTML = '';
+
+            productos.forEach(prod => {
+                const itemHTML = `
+                    <div class="bg-brand-royal/90 rounded-2xl p-6 border border-brand-cobalt/50 hover:border-brand-bright/60 transition-all flex flex-col justify-between shadow-xl group">
+                        <div>
+                            <div class="flex items-center justify-between mb-3">
+                                <div class="w-10 h-10 rounded-xl bg-brand-night border border-brand-bright/30 flex items-center justify-center text-brand-bright group-hover:scale-110 transition-transform">
+                                    <i class="fas ${prod.icono}"></i>
+                                </div>
+                                <span class="font-bold text-brand-bright text-base font-mono">$ ${prod.precio.toLocaleString('es-CO')} COP</span>
+                            </div>
+                            <h3 class="font-bold text-white text-lg mb-1">${prod.nombre}</h3>
+                            <p class="text-xs text-slate-300 leading-relaxed">${prod.desc}</p>
+                        </div>
+                        <button onclick="agregarAlPedido(${prod.id})" class="mt-5 w-full py-2.5 bg-brand-night hover:bg-brand-bright hover:text-brand-night text-brand-bright border border-brand-bright/40 rounded-xl font-bold text-xs transition-all flex items-center justify-center gap-2">
+                            <i class="fas fa-plus"></i> Agregar al Pedido
+                        </button>
+                    </div>
+                `;
+                contenedor.innerHTML += itemHTML;
+            });
+        }
+
+        function filtrarMenu(cat) {
+            const btnTodos = document.getElementById('btn-cat-todos');
+            const btnCafes = document.getElementById('btn-cat-cafes');
+            const btnPana = document.getElementById('btn-cat-panaderia');
+
+            [btnTodos, btnCafes, btnPana].forEach(b => {
+                b.className = "px-5 py-2.5 rounded-xl font-semibold text-sm text-slate-300 hover:text-white transition-all";
+            });
+
+            if (cat === 'todos') {
+                btnTodos.className = "px-5 py-2.5 rounded-xl font-semibold text-sm transition-all bg-brand-bright text-brand-night font-bold shadow-sm";
+                renderizarMenu(menuProductos);
+            } else if (cat === 'cafes') {
+                btnCafes.className = "px-5 py-2.5 rounded-xl font-semibold text-sm transition-all bg-brand-bright text-brand-night font-bold shadow-sm";
+                renderizarMenu(menuProductos.filter(p => p.categoria === 'cafes'));
+            } else if (cat === 'panaderia') {
+                btnPana.className = "px-5 py-2.5 rounded-xl font-semibold text-sm transition-all bg-brand-bright text-brand-night font-bold shadow-sm";
+                renderizarMenu(menuProductos.filter(p => p.categoria === 'panaderia'));
+            }
+        }
+
+        function agregarAlPedido(id) {
+            const producto = menuProductos.find(p => p.id === id);
+            if (!producto) return;
+
+            const existente = pedidoActual.find(item => item.id === id);
+            if (existente) {
+                existente.cantidad += 1;
+            } else {
+                pedidoActual.push({ ...producto, cantidad: 1 });
+            }
+            actualizarUIResumen();
+        }
+
+        function actualizarUIResumen() {
+            const listaDiv = document.getElementById('lista-pedido');
+            const totalSpan = document.getElementById('total-pedido');
+
+            if (pedidoActual.length === 0) {
+                listaDiv.className = "py-4 text-xs text-slate-400 min-h-[50px] flex items-center justify-center";
+                listaDiv.innerHTML = "Haz clic en los productos del menú para agregarlos a tu lista.";
+                totalSpan.textContent = "$ 0 COP";
+                return;
+            }
+
+            listaDiv.className = "py-3 space-y-2";
+            let total = 0;
+            let html = '';
+
+            pedidoActual.forEach(item => {
+                const subtotal = item.precio * item.cantidad;
+                total += subtotal;
+                html += `
+                    <div class="flex items-center justify-between text-xs bg-brand-night/80 p-2.5 rounded-xl border border-brand-cobalt/30">
+                        <span class="font-medium text-white">${item.nombre} <strong class="text-brand-bright">x${item.cantidad}</strong></span>
+                        <div class="flex items-center gap-3">
+                            <span class="text-slate-300">$ ${subtotal.toLocaleString('es-CO')} COP</span>
+                            <button onclick="eliminarDelPedido(${item.id})" class="text-red-400 hover:text-red-300">
+                                <i class="fas fa-trash"></i>
+                            </button>
+                        </div>
+                    </div>
+                `;
+            });
+
+            listaDiv.innerHTML = html;
+            totalSpan.textContent = `$ ${total.toLocaleString('es-CO')} COP`;
+        }
+
+        function eliminarDelPedido(id) {
+            pedidoActual = pedidoActual.filter(item => item.id !== id);
+            actualizarUIResumen();
+        }
+
+        function limpiarPedido() {
+            pedidoActual = [];
+            actualizarUIResumen();
+        }
+
+        function enviarPedidoWhatsApp() {
+            if (pedidoActual.length === 0) {
+                return;
+            }
+
+            let mensaje = "Hola Café LA Istmina! Quisiera realizar este pedido para mi mesa:\n\n";
+            let total = 0;
+
+            pedidoActual.forEach(i => {
+                const sub = i.precio * i.cantidad;
+                total += sub;
+                mensaje += `- ${i.nombre} x${i.cantidad}: $ ${sub.toLocaleString('es-CO')} COP\n`;
+            });
+
+            mensaje += `\n*Total Estimado:* $ ${total.toLocaleString('es-CO')} COP\n`;
+            mensaje += "¡Muchas gracias!";
+
+            const url = `https://wa.me/573000000000?text=${encodeURIComponent(mensaje)}`;
+            window.open(url, '_blank');
+        }
+
+        // Taller interactivo de colores de arcilla
+        function cambiarColorArcilla(fillColor, detailColor) {
+            const figuraBase = document.getElementById('figura-base');
+            const figuraAsa = document.getElementById('figura-asa');
+            const det1 = document.getElementById('figura-det-1');
+            const det2 = document.getElementById('figura-det-2');
+
+            figuraBase.setAttribute('fill', fillColor);
+            figuraAsa.setAttribute('stroke', fillColor);
+            det1.setAttribute('fill', detailColor);
+            det2.setAttribute('fill', detailColor);
+        }
+
+        function resetColorArcilla() {
+            cambiarColorArcilla('#D2B48C', '#E6C280');
+        }
+
+        // Reservaciones
+        function procesarReserva(e) {
+            e.preventDefault();
+            const nombre = document.getElementById('res-nombre').value;
+            const fecha = document.getElementById('res-fecha').value;
+            const hora = document.getElementById('res-hora').value;
+            const personas = document.getElementById('res-personas').value;
+
+            document.getElementById('modal-mensaje').innerHTML = `
+                Hola <strong class="text-white">${nombre}</strong>, te esperamos en nuestra sede de <strong>Istmina - Chocó</strong> el día <strong class="text-brand-bright">${fecha}</strong> a las <strong class="text-brand-bright">${hora}</strong> para <strong class="text-white">${personas}</strong>.
+            `;
+            document.getElementById('modal-reserva').classList.remove('hidden');
+        }
+
+        function cerrarModalReserva() {
+            document.getElementById('modal-reserva').classList.add('hidden');
+            document.getElementById('form-reserva').reset();
+        }
+
+        // Carga inicial
+        window.onload = function() {
+            renderizarMenu(menuProductos);
+        }
+    </script>
+</body>
+</html>

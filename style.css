@@ -1,0 +1,186 @@
+body {
+  background-color: #054854;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  color: #72D1E2 ;
+}
+h1{
+ color:#EDF3F4 ;
+ font-size: 2.5rem;
+}
+h2{ 
+ color: #EDF3F4;
+ font-size:  1.5rem;
+}
+header {
+  padding: 1.5rem 2rem;
+  border-bottom: 1px solid #72D1E2;
+}
+nav a {
+    color: #949A9B;
+}
+main {
+  padding: 3rem 2rem;
+  max-width:  800px;
+  margin: 0 auto;
+}
+.metodo-titulo{
+    font-size: 1.1rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    margin-bottom: 0.25rem;
+    color: #949A9B;
+}
+.precio{
+    font-weight: bold;
+    color: #EDF3F4;
+}
+footer {
+.subtitulo-d {
+  padding: 2rem 1rem;
+  font-size: 3rem;
+}
+.contacto-titulo {
+   font-size: 2rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    margin-bottom: 0.25rem;
+    color: #949A9B;
+}
+.parrafos-contacto{
+  color: #EDF3F4;
+  font-size:  1.3rem;;
+}
+}
+
+#contador-tazas {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #EDF3F4;
+}
+
+#boton-reservar {
+   display: block;
+   margin-top: 1rem;
+   padding: 0.5rem 1.25;
+   border: none;
+   font-family: Georgia, serif;
+   font-size: 1rem;
+   cursor: pointer;
+   background-color: #EDF3F4;
+   color: #666666;
+
+}
+
+.cafe-container {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #054854;
+    color: #334155;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px;
+    min-height: 80vh;
+}
+.cafe-card {
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px -5px rgba(10, 37, 64, 0.1);
+    width: 100%;
+    max-width: 500px;
+    border: 1px solid #e2e8f0;
+}
+.cafe-header {
+    text-align: center;
+    margin-bottom: 24px;
+}
+.cafe-header h2 {
+    color: #0a2540;
+    font-size: 24px;
+    margin-bottom: 8px;
+}
+.cafe-header p {
+    color: #64748b;
+    font-size: 14px;
+}
+.cafe-group {
+    margin-bottom: 16px;
+}
+.cafe-group label {
+    display: block;
+    font-size: 13px;
+    font-weight: 600;
+    color: #1e293b;
+    margin-bottom: 6px;
+}
+.cafe-group input, .cafe-group textarea {
+    width: 100%;
+    padding: 10px 14px;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    font-size: 14px;
+    outline: none;
+    transition: all 0.3s;
+    box-sizing: border-box;
+}
+.cafe-group input:focus, .cafe-group textarea:focus {
+    border-color: #0284c7;
+    box-shadow: 0 0 0 3px rgba(2, 132, 199, 0.15);
+}
+.cafe-group input.error-input {
+    border-color: #ef4444;
+    background-color: #fef2f2;
+}
+.cafe-error {
+    color: #ef4444;
+    font-size: 12px;
+    margin-top: 4px;
+    display: block;
+}
+.cafe-btn {
+    width: 100%;
+    background-color: #0a2540;
+    color: white;
+    border: none;
+    padding: 12px;
+    font-size: 15px;
+    font-weight: 600;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+.cafe-btn:hover {
+    background-color: #0284c7;
+}
+.cafe-success {
+    margin-top: 15px;
+    padding: 10px;
+    background-color: #f0fdf4;
+    border: 1px solid #bbf7d0;
+    color: #166534;
+    border-radius: 6px;
+    font-size: 14px;
+    text-align: center;
+}
+.cafe-console-box {
+    margin-top: 25px;
+    background: #0f172a;
+    border-radius: 8px;
+    overflow: hidden;
+}
+.cafe-console-title {
+    background: #1e293b;
+    color: #94a3b8;
+    padding: 8px 12px;
+    font-size: 12px;
+    font-family: monospace;
+}
+.cafe-console-output {
+    padding: 12px;
+    color: #38bdf8;
+    font-family: monospace;
+    font-size: 12px;
+    white-space: pre-wrap;
+    max-height: 120px;
+    overflow-y: auto;
+}
