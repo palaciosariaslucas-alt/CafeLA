@@ -105,6 +105,6 @@ form.addEventListener('submit', function(e) {
     mensajeExito.style.display = 'block';
     mensajeExito.textContent = `¡Gracias ${nombre}! Tu inscripción a la cata ha sido registrada con éxito.`;
     
-    // Opcional: limpiar formulario
+    
     form.reset();
 });
